@@ -1,0 +1,23 @@
+#开发环境配置
+
+server:
+  # 服务端口
+  port: 9090
+
+
+spring:
+  # 数据源配置，请修改为你项目的实际配置
+  datasource:
+    username: ${RDS_USER_NAME}
+    password: ${RDS_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${RDS_ADDRESS}:${RDS_PORT}/${RDS_DB_NAME}?useSSL=false&serverTimezone=UTC&characterEncoding=UTF8
+
+
+
+
+
+
+
+
+

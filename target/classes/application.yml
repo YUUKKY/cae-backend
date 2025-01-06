@@ -19,9 +19,7 @@ spring:
         git:
           uri: https://github.com/YUUKKY/cae-backend.git
           default-label: master
-          search-paths: ${GIT_SEARCH_PATH:src/main/resources/application.properties}
-          username: ${GIT_USER_NAME}
-          password: ${GIT_PASSWORD}
+          search-paths: src/main/resources/application.properties
 
 mybatis-plus:
   configuration:
