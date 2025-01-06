@@ -21,7 +21,7 @@ spring:
         git:
           uri: https://github.com/YUUKKY/cae-backend.git
           default-label: ${GIT_BRANCH}
-          search-paths: ${GIT_SEARCH_PATH:src/main/resources/application.properties}
+          search-paths: ${GIT_SEARCH_PATH}
           username: ${GIT_USER_NAME}
           password: ${GIT_PASSWORD}
 
