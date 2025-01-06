@@ -13,6 +13,8 @@ spring:
     resources:
       # 关闭默认静态资源的映射规则
       add-mappings: false
+  application:
+    name: cae-demo
   cloud:
     config:
       server:
