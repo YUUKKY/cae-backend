@@ -5,11 +5,25 @@ import com.huawei.cae.service.UserDataService;
 import com.huawei.cae.vo.UserDataVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+
+import javax.annotation.PostConstruct;
 
 
 @RestController
 @RequestMapping("/v1")
 public class UserDataController {
+    @Autowired
+    private MeterRegistry registry;
+
+    private Counter visitCounter;
+
+    @PostConstruct
+    private void init() {
+        visitCounter = registry.counter("api_calling_times", "api_calling_times", "");
+    }
+
     @Autowired
     private UserDataService dataService;
 
@@ -38,6 +52,7 @@ public class UserDataController {
     @CrossOrigin
     @RequestMapping(value = "/consume_cpu", method = RequestMethod.GET)
     public Integer clientTest() {
+        visitCounter.increment();
         // 消耗CPU 的计算
         for (int i = 0; i <= 10; i++) {
             MyThread thread = new MyThread();
