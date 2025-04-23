@@ -21,7 +21,7 @@ public class UserDataController {
 
     @PostConstruct
     private void init() {
-        visitCounter = registry.counter("api_calling_times", "api_calling_times", "");
+        visitCounter = registry.counter("click_operated_total", "click_operated_total", "");
     }
 
     @Autowired
