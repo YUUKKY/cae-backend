@@ -30,7 +30,7 @@ mybatis-plus:
   # mapper路径位置
   mapper-locations: classpath:mapper/*.xml
 
-  management:
+management:
   endpoints:
     web:
       exposure:
