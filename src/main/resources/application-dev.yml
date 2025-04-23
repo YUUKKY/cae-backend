@@ -13,12 +13,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${RDS_ADDRESS}:${RDS_PORT}/${RDS_DB_NAME}?useSSL=false&serverTimezone=UTC&characterEncoding=UTF8
 
-  management:
-  endpoints:
-    web:
-      exposure:
-        include: prometheus
-
 
 
 
